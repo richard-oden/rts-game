@@ -1,4 +1,5 @@
-﻿using System;
+﻿using rts_game.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,6 @@ namespace rts_game.Models
 
         public int Height { get; set; }
 
-
+        public HashSet<IMappable> Mappables { get; set; } = new();
     }
 }
