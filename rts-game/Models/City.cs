@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace rts_game.Models
 {
-    internal class City : IMappable
+    public class City : IMappable
     {
         private int _infrastructure;
         private int _population;
