@@ -7,10 +7,11 @@ using static System.Console;
 
 namespace rts_game
 {
-    public static class Renderer
+    public static partial class Renderer
     {
-        private static int _windowWidth = 150;
-        private static int _windowHeight = 40;
+        private static readonly int _windowWidth = 150;
+        private static readonly int _windowHeight = 30;
+        private static readonly int _rightPaneXLevel = 111;
 
         public static void Setup()
         {
@@ -27,7 +28,7 @@ namespace rts_game
                 for (var x = 1; x < _windowWidth - 1; x++)
                 {
                     SetCursorPosition(x, y);
-                    Write('═');
+                    Write(_borderH);
                 }
             }
 
@@ -36,7 +37,7 @@ namespace rts_game
                 for (var y = 1; y < _windowHeight - 1; y++)
                 {
                     SetCursorPosition(x, y);
-                    Write('║');
+                    Write(_borderV);
                 }
             }
 
@@ -46,16 +47,16 @@ namespace rts_game
             DrawVerticalBorder(_windowWidth - 1);
 
             SetCursorPosition(0, 0);
-            Write('╔');
+            Write(_borderTL);
 
             SetCursorPosition(_windowWidth - 1, 0);
-            Write('╗');
+            Write(_borderTR);
 
             SetCursorPosition(0, _windowHeight - 1);
-            Write('╚');
+            Write(_borderBL);
 
             SetCursorPosition(_windowWidth - 1, _windowHeight - 1);
-            Write('╝');
+            Write(_borderBR);
         }
     }
 }
