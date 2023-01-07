@@ -18,5 +18,9 @@ namespace rts_game.Models
         public override int AttackDamage { get; set; } = 0;
 
         public override int Armor { get; set; } = 0;
+
+        public override int CurrencyCost { get; set; } = 100;
+
+        public override int PopulationCost { get; set; } = 5;
     }
 }

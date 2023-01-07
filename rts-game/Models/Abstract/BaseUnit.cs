@@ -27,6 +27,10 @@ namespace rts_game.Models.Abstract
 
         public virtual int Armor { get; set; }
 
+        public virtual int CurrencyCost { get; set; }
+
+        public virtual int PopulationCost { get; set; }
+
         public Coordinate Coordinate { get; set; }
 
         public BaseUnit()
