@@ -5,13 +5,13 @@ namespace rts_game;
 class Program
 {
     private static long _ticks = 0;
-    private static int _windowWidth = 150;
-    private static int _windowHeight = 300;
+    private static int _windowWidth = 120;
+    private static int _windowHeight = 30;
 
-    static async void Main(string[] args)
+    static void Main(string[] args)
     {
         Setup();
-        await Run();
+        Run();
     }
 
     public static void Setup()
