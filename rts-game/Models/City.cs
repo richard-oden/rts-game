@@ -1,4 +1,4 @@
-﻿using rts_game.Interfaces;
+﻿using rts_game.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

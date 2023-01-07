@@ -17,5 +17,6 @@ namespace rts_game
         private static readonly char _borderTL = '╔';
         private static readonly char _borderHIntersectT = '╩';
         private static readonly char _borderHIntersectB = '╦';
+        private static readonly char _city = '҈';
     }
 }

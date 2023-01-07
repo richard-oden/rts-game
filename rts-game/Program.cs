@@ -1,4 +1,6 @@
-﻿namespace rts_game;
+﻿using rts_game.Models;
+
+namespace rts_game;
 
 class Program
 {
@@ -10,7 +12,10 @@ class Program
         await Run();
     }
 
-
+    public static World CreateWorld()
+    { 
+    
+    }
 
     public static async Task Run()
     {

@@ -1,4 +1,4 @@
-﻿using rts_game.Interfaces;
+﻿using rts_game.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,5 +28,10 @@ namespace rts_game.Models.Abstract
         public virtual int Armor { get; set; }
 
         public Coordinate Coordinate { get; set; }
+
+        public BaseUnit()
+        {
+            _health = MaxHealth;
+        }
     }
 }

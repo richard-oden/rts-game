@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace rts_game.Interfaces
+namespace rts_game.Models.Interfaces
 {
     public interface IMappable
     {
