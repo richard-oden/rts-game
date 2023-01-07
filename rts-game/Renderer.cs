@@ -45,6 +45,7 @@ namespace rts_game
             DrawHorizontalBorder(_windowHeight - 1);
             DrawVerticalBorder(0);
             DrawVerticalBorder(_windowWidth - 1);
+            DrawVerticalBorder(_rightPaneXLevel);
 
             SetCursorPosition(0, 0);
             Write(_borderTL);
@@ -57,6 +58,12 @@ namespace rts_game
 
             SetCursorPosition(_windowWidth - 1, _windowHeight - 1);
             Write(_borderBR);
+
+            SetCursorPosition(_rightPaneXLevel, 0);
+            Write(_borderHIntersectB);
+
+            SetCursorPosition(_rightPaneXLevel, _windowHeight - 1);
+            Write(_borderHIntersectT);
         }
     }
 }
