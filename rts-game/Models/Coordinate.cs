@@ -12,6 +12,15 @@ namespace rts_game.Models
 
         public int Y;
 
+        public static bool operator ==(Coordinate coordinate1, Coordinate coordinate2)
+        {
+            return coordinate1.Equals(coordinate2);
+        }
+        public static bool operator !=(Coordinate coordinate1, Coordinate coordinate2)
+        {
+            return !coordinate1.Equals(coordinate2);
+        }
+
         public double DistanceTo(Coordinate other) =>
             Math.Sqrt((Math.Pow(X - other.X, 2) + Math.Pow(Y - other.Y, 2)));
     }

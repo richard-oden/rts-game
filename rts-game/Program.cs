@@ -66,6 +66,22 @@ class Program
             }
 
             startingCoordinates.Add(startingCoordinate);
+
+            foreach (var mappable in faction.Mappables)
+            {
+                var coordinate = (Coordinate)default;
+
+                while (coordinate == default || faction.Mappables.Any(_ => _.Coordinate == coordinate))
+                {
+                    coordinate = new Coordinate
+                    {
+                        X = _random.Next(startingCoordinate.X - 4, startingCoordinate.X + 4),
+                        Y = _random.Next(startingCoordinate.Y - 4, startingCoordinate.Y + 4)
+                    };
+                }
+
+                mappable.Coordinate = coordinate;
+            }
         }
 
         return world;

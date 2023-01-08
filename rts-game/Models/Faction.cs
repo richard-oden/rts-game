@@ -1,5 +1,6 @@
 ﻿using rts_game.Enumerations;
 using rts_game.Models.Abstract;
+using rts_game.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace rts_game.Models
         public HashSet<City> Cities { get; set; }
 
         public HashSet<BaseUnit> Units { get; set; }
+
+        public HashSet<IMappable> Mappables => Cities.Cast<IMappable>()
+            .Union(Units.Cast<IMappable>()).ToHashSet();
 
         public int Currency { get; set; } = 10;
 
