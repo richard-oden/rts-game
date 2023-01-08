@@ -41,10 +41,34 @@ class Program
                 Difficulty.Hard => 75
             };
 
-            factions.Add(Faction.InitialComputerFaction($"Computer {i}", hostility, computerCurrency);
+            factions.Add(Faction.InitialComputerFaction($"Computer {i}", hostility, computerCurrency));
         }
 
         return factions;
+    }
+
+    public static World CreateWorld(IEnumerable<Faction> factions, int worldWidth, int worldHeight)
+    {
+        var world = new World() { Width = worldWidth, Height = worldHeight };
+        var startingCoordinates = new HashSet<Coordinate>();
+
+        foreach (var faction in factions)
+        {
+            var startingCoordinate = (Coordinate)default;
+
+            while (startingCoordinates == default || startingCoordinates.Any(_ => _.DistanceTo(startingCoordinate) < 10))
+            {
+                startingCoordinate = new Coordinate
+                {
+                    X = _random.Next(4, worldWidth - 6), // ensuring that all starting coordinates are
+                    Y = _random.Next(4, worldHeight - 6) // at least 5 spaces from world border
+                };
+            }
+
+            startingCoordinates.Add(startingCoordinate);
+        }
+
+        return world;
     }
 
     public static async Task Run()

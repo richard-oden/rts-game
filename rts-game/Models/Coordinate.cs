@@ -11,5 +11,8 @@ namespace rts_game.Models
         public int X;
 
         public int Y;
+
+        public double DistanceTo(Coordinate other) =>
+            Math.Sqrt((Math.Pow(X - other.X, 2) + Math.Pow(Y - other.Y, 2)));
     }
 }
