@@ -1,4 +1,4 @@
-﻿using rts_game.Interfaces;
+﻿using rts_game.Models.Interfaces;
 
 namespace rts_game.Models
 {
