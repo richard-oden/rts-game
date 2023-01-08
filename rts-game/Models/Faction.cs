@@ -22,10 +22,10 @@ namespace rts_game.Models
 
         public Hostility Hostility { get; init; }
 
-        public static Faction InitialPlayerFaction(string playerName) =>
-            new() { Name = playerName, IsPlayer = true, Units = new() { new Settler() } };
+        public static Faction InitialPlayerFaction(string playerName, int currency) =>
+            new() { Name = playerName, IsPlayer = true, Units = new() { new Settler() }, Currency = currency };
 
-        public static Faction InitialComputerFaction(string computerName, Hostility hostility) =>
-            new() { Name = computerName, Hostility = hostility, Units = new() { new Settler() } };
+        public static Faction InitialComputerFaction(string computerName, Hostility hostility, int currency) =>
+            new() { Name = computerName, Hostility = hostility, Units = new() { new Settler() }, Currency = currency };
     }
 }
