@@ -1,4 +1,5 @@
-﻿using rts_game.Models.Abstract;
+﻿using rts_game.Enumerations;
+using rts_game.Models.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +16,16 @@ namespace rts_game.Models
 
         public HashSet<BaseUnit> Units { get; set; }
 
-        public int Currency { get; set; }
+        public int Currency { get; set; } = 10;
 
         public bool IsPlayer { get; init; }
 
         public Hostility Hostility { get; init; }
-    }
 
-    public enum Hostility
-    { 
-        VeryLow,
-        Low,
-        Medium,
-        High,
-        VeryHigh
+        public static Faction InitialPlayerFaction(string playerName) =>
+            new() { Name = playerName, IsPlayer = true, Units = new() { new Settler() } };
+
+        public static Faction InitialComputerFaction(string computerName, Hostility hostility) =>
+            new() { Name = computerName, Hostility = hostility, Units = new() { new Settler() } };
     }
 }
